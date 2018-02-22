@@ -23,8 +23,8 @@ public class BaseTest {
 
     @After
     public void closeBrowser() {
-        /*driver.close();
-        driver.quit();*/
+        driver.close();
+        driver.quit();
     }
 
     protected String getValueInQuotes(String value) {

@@ -12,20 +12,15 @@ public class UserPage extends AbstractPage {
 
     public RezultSearchPage searchByTypeAndRegion(String searchValue, String typeValue, String regionValue) {
         getRightBaseLink().click();
+        getSearchField().sendKeys(searchValue);
         getSearchExtendedButton().click();
-        fillSearchField(searchValue, typeValue, regionValue);
+        fillSearchExtendedField(typeValue, regionValue);
         getSearchExrendedButton().click();
         return new RezultSearchPage(driver);
     }
 
-    private void fillSearchField (String searchValue, String typeValue, String regionValue) {
-        getSearchField().sendKeys(searchValue);
-
-        getUlForType().click();
+    private void fillSearchExtendedField (String typeValue, String regionValue) {
         selectFromUlByValue(getUlForType(), typeValue);
-
-        getUlForRegion().click(); //при клике на элемент UL сразу устанавливается значение Моск обл,
-        getUlForRegion().click(); // поэтому здесь имитация двойного щелчка - возврат ко значению РФ
         selectFromUlByValue(getUlForRegion(), regionValue);
     }
 

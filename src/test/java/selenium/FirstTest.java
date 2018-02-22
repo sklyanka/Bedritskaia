@@ -46,8 +46,6 @@ public class FirstTest  extends BaseTest{
         Assert.assertEquals(getValueInQuotes(searchValue), rezultSearchPage.getSearchMainParam().getText());
 
         //соответствие выбранных значений вида и региона
-        System.out.println(rezultSearchPage.getSearchParams().get(0).getText());
-        System.out.println(rezultSearchPage.getSearchParams().get(1).getText());
         Assert.assertEquals(getValueInQuotes(typeValue), rezultSearchPage.getSearchParams().get(0).getText());
         Assert.assertEquals(getValueInQuotes(regionValue), rezultSearchPage.getSearchParams().get(1).getText());
     }
